@@ -1,18 +1,21 @@
 import "./App.css";
-import RegistrationForm from "./Registr";
-import LoginForm from "./Author";
-const registration = 1;
+import RegistrationForm from "./components/authorization/Registr";
+import LoginForm from "./components/authorization/Author";
+import Header from "./components/header/Header";
+import Main from "./components/main/Main";
 
+const registration = 1;
+const authorization = 1;
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {registration ? (
+      <Header></Header>
+      <Main></Main>
+      {/* {registration ? (
           <LoginForm></LoginForm>
         ) : (
           <RegistrationForm></RegistrationForm>
-        )}
-      </header>
+        )} */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import FormUI from "./UI/FormUi";
+import FormUI from "./FormUi";
 import { useState } from "react";
 
 const initialCredentials = {
