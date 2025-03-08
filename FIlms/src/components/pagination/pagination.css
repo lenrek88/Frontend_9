@@ -1,0 +1,13 @@
+.Pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.Pagination > ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    padding: 0;
+    flex-direction: row;
+    gap: 24px;
+}
