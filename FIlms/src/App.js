@@ -3,7 +3,7 @@ import RegistrationForm from "./components/authorization/Registr";
 import LoginForm from "./components/authorization/Author";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
-
+//q
 const registration = 1;
 const authorization = 1;
 function App() {
