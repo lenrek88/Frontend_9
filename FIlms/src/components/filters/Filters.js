@@ -3,11 +3,14 @@ import Pagination from "../pagination/Pagination";
 import { useReducer, useState, useEffect, useContext } from "react";
 import filterReducer from "../reducer/filterReducer";
 import Select from "./Select";
-import { UsersContext } from "../context/context";
+import { UsersContext, StoreContext, StoreDispatchContext } from "../context/context";
 const initalState = {key: true}
 
 export default function Filters() {
-  const [state, dispatch] = useReducer(filterReducer, initalState);
+
+  const store = useContext(StoreContext)
+  const dispatch = useContext(StoreDispatchContext)
+
   function handlerClick() {
     dispatch({type: 'resetKey'});
   }
@@ -32,9 +35,9 @@ export default function Filters() {
     )
     .catch(err => console.error(err));
   },[])
-
+  console.log(store.filters.key)
   return (
-    <div className="Filters" key={state.key}>
+    <div className="Filters" key={store.filters.key}>
       <div className="Filters-Header">
         <p>Фильтры</p>
         <button onClick={handlerClick}>X</button>
