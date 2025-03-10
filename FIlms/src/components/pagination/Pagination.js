@@ -5,7 +5,7 @@ export default function Pagination() {
     <div className="Pagination">
       <ul>
         {pagAr.map((it) => (
-          <button>{it}</button>
+          <button key={it}>{it}</button>
         ))}
       </ul>
     </div>

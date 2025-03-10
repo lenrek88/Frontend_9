@@ -21,10 +21,13 @@
 .Filters-Main {
     display: flex;
     flex-direction: column;
+    text-align: start;
+    margin-left: 12px;
 }
 
 .Filters-Main > select {
     margin: 24px;
+   
 }
 
 .Filters-genres {
