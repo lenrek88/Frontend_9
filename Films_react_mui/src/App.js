@@ -1,28 +1,30 @@
-import "./App.css";
-import RegistrationForm from "./components/authorization/Registr";
-import LoginForm from "./components/authorization/Author";
-import Header from "./components/header/Header";
-import Main from "./components/main/Main";
-import { UsersContext } from "./components/context/context";
-const registration = 1;
-const authorization = 1;
-function App() {
-  const bearToken =
-    "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZWVjYzlmZjljMTIxY2YwYmE4MmY3MTMwZDI3ZGM0ZSIsIm5iZiI6MTY5MjI5MjE5NS4yNzIsInN1YiI6IjY0ZGU1NDYzNTllOGE5MDBhYzA4YWVjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uLeEMAf7cur6RaKgMnUMw4RpVFf2SR6FaJp67acRPp8";
+import './App.css';
+import Header from './components/header/header.jsx';
+import FilmCardInfo from './components/films/film_card_info.jsx';
+import Content from './components/films/content.jsx';
+import { Route, Routes } from 'react-router-dom';
+import GetToken from './components/authorization/get_token.jsx';
+import PostToken from './components/authorization/post_token.jsx';
+import getCookie from './utils/cookie/getCookie.js';
 
-  return (
-    <div className="App">
-      <Header></Header>
-      <UsersContext value={bearToken}>
-        <Main></Main>
-      </UsersContext>
-      {/* {registration ? (
-          <LoginForm></LoginForm>
-        ) : (
-          <RegistrationForm></RegistrationForm>
-        )} */}
-    </div>
-  );
+function App() {
+    const Token = getCookie('userToken');
+
+    return (
+        <div className="App">
+            <Header />
+            {Token ? (
+                <Routes>
+                    <Route path="/" element={<Content />} />
+                    <Route path="/Film/:id" element={<FilmCardInfo />} />
+                </Routes>
+            ) : null}
+            <Routes>
+                <Route path="/Registration" element={<GetToken />} />
+                <Route path="/Authorisation" element={<PostToken />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
