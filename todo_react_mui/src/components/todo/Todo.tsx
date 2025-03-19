@@ -1,8 +1,7 @@
-import { Box, TextField, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import AddTask from "../addTask/AddTask";
 import Plan from "../plan/Plan";
 import Done from "../done/Done";
-import { useTask, useTaskDispatch } from "../../context/TaskContext";
 export default function Todo() {
   return (
     <Box
