@@ -1,14 +1,27 @@
 import { createContext, useContext, useReducer } from "react";
 
-const TaskContext = createContext(null);
+type TasksType = {
+  id: number;
+  text: string;
+  done: boolean;
+}
 
-const TasksDispatchContext = createContext(null);
+type ActionType = {
+  type: string;
+  id: number;
+  text: string;
+  task: TasksType;
+}
 
-interface
+const TaskContext = createContext([{id: 1, text: 'hi', done: false}]);
+
+const TasksDispatchContext = createContext<Function>(function A() {});
 
 
 export function TaskProvider({ children }:{children: React.ReactNode}) {
   const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
+
+
 
   return (
     <TaskContext.Provider value={tasks}>
@@ -27,7 +40,7 @@ export function useTaskDispatch() {
   return useContext(TasksDispatchContext);
 }
 
-function taskReducer(tasks, action) {
+function taskReducer(tasks : Array<TasksType>, action: ActionType) {
   switch (action.type) {
     case "added": {
       return [

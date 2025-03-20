@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useTaskDispatch = exports.useTask = exports.TaskProvider = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = require("react");
-const TaskContext = (0, react_1.createContext)(null);
-const TasksDispatchContext = (0, react_1.createContext)(null);
+const TaskContext = (0, react_1.createContext)([{ id: 1, text: 'hi', done: false }]);
+const TasksDispatchContext = (0, react_1.createContext)(function A() { });
 function TaskProvider({ children }) {
     const [tasks, dispatch] = (0, react_1.useReducer)(taskReducer, initialTasks);
     return ((0, jsx_runtime_1.jsx)(TaskContext.Provider, { value: tasks, children: (0, jsx_runtime_1.jsx)(TasksDispatchContext.Provider, { value: dispatch, children: children }) }));

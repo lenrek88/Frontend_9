@@ -1,14 +1,14 @@
 import { Typography } from "@mui/material";
 import Task from "../task/Task";
 import { Box } from "@mui/material";
-import { useTask, useTaskDispatch } from "../../context/TaskContext";
+import { useTask } from "../../context/TaskContext";
 export default function Plan() {
   const tasks = useTask();
   const lengthPlan = tasks.filter((it) => it.done === false).length;
   return (
     <Box flexDirection={"column"}>
       {lengthPlan > 0 ? (
-        <Typography color="gray" varint="button">
+        <Typography color="gray" variant="button">
           План ({lengthPlan})
         </Typography>
       ) : null}

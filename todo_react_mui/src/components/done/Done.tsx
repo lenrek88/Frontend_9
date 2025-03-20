@@ -8,7 +8,7 @@ export default function Done() {
   return (
     <Box flexDirection={"column-reverse"}>
       {lengthDone > 0 ? (
-        <Typography color="gray" varint="button">
+        <Typography color="gray" variant="button">
           Готово ({lengthDone})
         </Typography>
       ) : null}

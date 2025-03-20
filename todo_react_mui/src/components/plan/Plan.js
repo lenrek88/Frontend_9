@@ -11,7 +11,7 @@ const TaskContext_1 = require("../../context/TaskContext");
 function Plan() {
     const tasks = (0, TaskContext_1.useTask)();
     const lengthPlan = tasks.filter((it) => it.done === false).length;
-    return ((0, jsx_runtime_1.jsxs)(material_2.Box, { flexDirection: "column", children: [lengthPlan > 0 ? ((0, jsx_runtime_1.jsxs)(material_1.Typography, { color: "gray", varint: "button", children: ["\u041F\u043B\u0430\u043D (", lengthPlan, ")"] })) : null, tasks.reverse().map((task) => {
+    return ((0, jsx_runtime_1.jsxs)(material_2.Box, { flexDirection: "column", children: [lengthPlan > 0 ? ((0, jsx_runtime_1.jsxs)(material_1.Typography, { color: "gray", variant: "button", children: ["\u041F\u043B\u0430\u043D (", lengthPlan, ")"] })) : null, tasks.reverse().map((task) => {
                 if (task.done) {
                     return (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {});
                 }

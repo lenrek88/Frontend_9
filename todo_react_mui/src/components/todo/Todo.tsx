@@ -5,7 +5,7 @@ import Done from "../done/Done";
 export default function Todo() {
   return (
     <Box
-      backgroundColor="white"
+      // backgroundColor="white"
       boxSizing={"border-box"}
       width={"514px"}
       height={"766px"}

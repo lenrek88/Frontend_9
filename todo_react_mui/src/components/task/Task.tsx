@@ -3,10 +3,16 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import CheckIcon from "@mui/icons-material/Check";
-import { useTask, useTaskDispatch } from "../../context/TaskContext";
+import { useTaskDispatch } from "../../context/TaskContext";
 import { useState } from "react";
 
-export default function Task({ task }) {
+type TasksType = {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
+export default function Task({ task }: {task: TasksType}) {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useTaskDispatch();
   let taskContent;

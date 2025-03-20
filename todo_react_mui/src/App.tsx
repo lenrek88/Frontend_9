@@ -11,7 +11,7 @@ function App() {
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          backgroundColor={"gray"}
+          // backgroundColor={"gray"}
           minHeight={"100vh"}
         >
           <Todo></Todo>

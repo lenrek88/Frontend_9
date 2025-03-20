@@ -11,7 +11,7 @@ const TaskContext_1 = require("../../context/TaskContext");
 function Done() {
     const tasks1 = (0, TaskContext_1.useTask)();
     const lengthDone = tasks1.filter((it) => it.done === true).length;
-    return ((0, jsx_runtime_1.jsxs)(material_2.Box, { flexDirection: "column-reverse", children: [lengthDone > 0 ? ((0, jsx_runtime_1.jsxs)(material_1.Typography, { color: "gray", varint: "button", children: ["\u0413\u043E\u0442\u043E\u0432\u043E (", lengthDone, ")"] })) : null, tasks1.map((task) => {
+    return ((0, jsx_runtime_1.jsxs)(material_2.Box, { flexDirection: "column-reverse", children: [lengthDone > 0 ? ((0, jsx_runtime_1.jsxs)(material_1.Typography, { color: "gray", variant: "button", children: ["\u0413\u043E\u0442\u043E\u0432\u043E (", lengthDone, ")"] })) : null, tasks1.map((task) => {
                 if (task.done) {
                     return (0, jsx_runtime_1.jsx)(Task_1.default, { task: task }, task.id);
                 }
