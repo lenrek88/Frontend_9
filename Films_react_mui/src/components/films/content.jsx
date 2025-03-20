@@ -1,4 +1,4 @@
-import Filters from '../filters/filters';
+import Filters from '../filters/Filters';
 import FilmGrid from './filmGrid';
 import { Box } from '@mui/material';
 export default function Content() {
