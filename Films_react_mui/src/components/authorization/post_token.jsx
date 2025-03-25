@@ -9,17 +9,19 @@ import {
     Button,
 } from '@mui/material';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUserToken } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
-
 export default function PostToken() {
     const [Token, setToken] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     function handlerSetToken() {
         document.cookie = `userToken = ${Token}`;
         console.log(Token);
         dispatch(addUserToken(Token));
+        navigate('/');
     }
 
     useEffect(() => {
@@ -61,9 +63,7 @@ export default function PostToken() {
                         <Link to="/">
                             <Button>Отмена</Button>
                         </Link>
-                        <Link to="/">
-                            <Button onClick={handlerSetToken}>Ок</Button>
-                        </Link>
+                        <Button onClick={handlerSetToken}>Ок</Button>
                     </DialogActions>
                 </Dialog>
             </Box>

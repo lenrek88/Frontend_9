@@ -4,17 +4,17 @@ import { IconButton, Toolbar, Box } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from 'react-router-dom';
 import getCookie from '../../utils/cookie/getCookie';
-
 export default function Header() {
     const Token = getCookie('userToken');
+    console.log(Token, 'header.jsx');
 
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h5" sx={{ mr: '180vh' }}>
-                        Фильмы
-                    </Typography>
+                <Toolbar
+                    sx={{ display: 'flex', justifyContent: 'space-between' }}
+                >
+                    <Typography variant="h5">Фильмы</Typography>
                     {Token ? (
                         <IconButton sx={{ color: 'white' }}>
                             <AccountCircleIcon></AccountCircleIcon>
