@@ -22,6 +22,7 @@ export default function PostToken() {
         console.log(Token);
         dispatch(addUserToken(Token));
         navigate('/');
+        setTimeout(() => navigate(0), 1); // рефреш на / и перезагрузка страницы
     }
 
     useEffect(() => {

@@ -21,12 +21,14 @@ export default function Find() {
 
     function findHandler(e) {
         e.preventDefault();
-        dispatch(
-            fetchFilm(
-                `https://api.themoviedb.org/3/search/movie?query=${text}&include_adult=false&language=ru&page=1`,
-                OPTIONS
-            )
-        );
+        if (text != '') {
+            dispatch(
+                fetchFilm(
+                    `https://api.themoviedb.org/3/search/movie?query=${text}&include_adult=false&language=ru&page=1`,
+                    OPTIONS
+                )
+            );
+        }
     }
 
     return (

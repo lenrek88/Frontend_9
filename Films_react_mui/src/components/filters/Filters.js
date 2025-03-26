@@ -19,6 +19,7 @@ export default function Filters() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchFilm(urlFind, OPTIONS));
+        console.log('FETCH FILM Filters.js');
     }, [select, thisPage]);
 
     function chooseSelect(value) {

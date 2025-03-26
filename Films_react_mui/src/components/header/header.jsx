@@ -4,6 +4,8 @@ import { IconButton, Toolbar, Box } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from 'react-router-dom';
 import getCookie from '../../utils/cookie/getCookie';
+import deleteAllCookies from '../../utils/cookie/deleteAllCookies';
+
 export default function Header() {
     const Token = getCookie('userToken');
     console.log(Token, 'header.jsx');
@@ -16,7 +18,10 @@ export default function Header() {
                 >
                     <Typography variant="h5">Фильмы</Typography>
                     {Token ? (
-                        <IconButton sx={{ color: 'white' }}>
+                        <IconButton
+                            sx={{ color: 'white' }}
+                            onClick={deleteAllCookies}
+                        >
                             <AccountCircleIcon></AccountCircleIcon>
                         </IconButton>
                     ) : (
