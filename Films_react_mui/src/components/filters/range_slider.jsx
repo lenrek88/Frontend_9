@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useState } from 'react';
-import { Typography } from '@mui/material';
 
 export default function RangeSlider() {
     const [value, setValue] = useState([1987, 2001]);
