@@ -11,8 +11,7 @@ export default function RangeSlider() {
     }
 
     return (
-        <>
-            <Typography sx={{ mb: 6, mr: 35, mt: 2 }}>Год релиза:</Typography>
+        <div>
             <Box sx={{ width: 350, ml: 1 }}>
                 <Slider
                     min={1960}
@@ -22,6 +21,6 @@ export default function RangeSlider() {
                     valueLabelDisplay="on"
                 />
             </Box>
-        </>
+        </div>
     );
 }

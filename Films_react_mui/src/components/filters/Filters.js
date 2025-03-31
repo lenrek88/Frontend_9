@@ -53,6 +53,7 @@ export default function Filters() {
                 data={['Популярности', 'Топ рейтовых']}
                 setSelect={chooseSelect}
             />
+            <Typography sx={{ mb: 6, mr: 35, mt: 2 }}>Год релиза:</Typography>
             <RangeSlider />
             <Genres />
 
