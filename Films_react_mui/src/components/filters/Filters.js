@@ -6,7 +6,7 @@ import { IconButton, Paper, Typography } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import Box from '@mui/material/Box';
 import RangeSlider from './range_slider';
-import Find from '../find/find';
+import Find from './find';
 import { OPTIONS, selectDeafult } from './const';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilm } from '../../redux/asyncActions/fetchFilm';

@@ -64,11 +64,11 @@ export default function FilmCardInfo() {
     useEffect(() => {
         try {
             const fetchData = async () => {
-                const data = await fetch(
+                const response = await fetch(
                     `https://api.themoviedb.org/3/movie/${id}?language=ru`,
                     OPTIONS
                 );
-                setFilmDetails(await data.json());
+                setFilmDetails(await response.json());
             };
             fetchData();
         } catch (err) {
@@ -77,40 +77,38 @@ export default function FilmCardInfo() {
     }, [id]);
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?language=ru`, OPTIONS)
-            .then((response) => response.json())
-            .then((response) => {
-                setFilmDetails(response);
-            })
-            .catch((err) => console.error(err));
+        try {
+            const fetchData = async () => {
+                const response = await fetch(
+                    `https://api.themoviedb.org/3/movie/${id}/credits?language=ru`,
+                    OPTIONS
+                );
+                setFilmCredits(await response.json());
+            };
+            fetchData();
+        } catch (err) {
+            console.error(err);
+        }
     }, [id]);
 
     useEffect(() => {
-        fetch(
-            `https://api.themoviedb.org/3/movie/${id}/credits?language=ru`,
-            OPTIONS
-        )
-            .then((response) => response.json())
-            .then((response) => {
-                setFilmCredits(response);
-            })
-            .catch((err) => console.error(err));
-    }, [id]);
-
-    useEffect(() => {
-        fetch(
-            `https://api.themoviedb.org/3/account/${userId}/favorite/movies`,
-            OPTIONS
-        )
-            .then((response) => response.json())
-            .then((response) => {
+        try {
+            const fetchData = async () => {
+                const response = await fetch(
+                    `https://api.themoviedb.org/3/account/${userId}/favorite/movies`,
+                    OPTIONS
+                );
+                const favorite = await response.json();
                 setIsFavorite(
-                    response.results.find((items) => items.id === +id)
+                    favorite.results.find((items) => items.id === +id)
                         ? false
                         : true
                 );
-            })
-            .catch((err) => console.error(err));
+            };
+            fetchData();
+        } catch (err) {
+            console.error(err);
+        }
     }, [userId]);
 
     const imagePoster = `${srcImagePoster}${filmDetails.poster_path}`;
